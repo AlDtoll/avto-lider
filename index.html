@@ -3,380 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авто-лидер — шиномонтажная мастерская в Новосибирск</title>
-    <meta name="description" content="Авто-лидер — шиномонтажная мастерская в Новосибирск. Авто-лидер — шиномонтажная мастерская в Новосибирск. Опытные специалисты, доступные цены, удобное расположение.">
-    <meta property="og:title" content="Авто-лидер — шиномонтажная мастерская">
-    <meta property="og:description" content="Авто-лидер — шиномонтажная мастерская в Новосибирск. Опытные специалисты, доступные цены, удобное расположение.">
-    <meta property="og:image" content="https://aldtoll.github.io/avto-lider/preview.jpg">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://aldtoll.github.io/avto-lider/preview.jpg">
+    <title>Авто-лидер — Шиномонтаж 24/7 в Новосибирске</title>
+    <meta name="description" content="Шиномонтаж 24/7, балансировка, правка дисков, дошиповка, хранение шин. Новосибирск, Троллейная 2к2.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; color: #1a1a1a; background: #fff; }
 
-        :root {
-            --color: #475569;
-            --color-dark: #353f4e;
-            --color-light: #e8eaed;
+        /* NAV */
+        nav {
+            background: #111;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
+        .nav-logo { color: white; font-weight: 800; font-size: 1.1rem; }
+        .nav-logo span { color: #f97316; }
+        .nav-phone { color: #f97316; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .nav-phone:hover { color: white; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #1f2937;
-            line-height: 1.6;
-        }
-
-        .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
-
-        /* Scroll animation */
-        .fade-up {
-            opacity: 0;
-            transform: translate3d(0, 24px, 0);
-            transition: opacity 0.55s ease, transform 0.55s ease;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
-        .fade-up.visible { opacity: 1; transform: translate3d(0, 0, 0); }
-
-        /* ── Hero ── */
+        /* HERO */
         .hero {
-            background: linear-gradient(145deg, var(--color) 0%, var(--color-dark) 100%);
+            background: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 100%),
+                        url('hero.jpg') center/cover no-repeat;
             color: white;
-            padding: 64px 0 80px;
-            text-align: center;
+            padding: 80px 24px;
             position: relative;
             overflow: hidden;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -60px; right: -80px;
-            width: 320px; height: 320px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.06);
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -40px; left: -60px;
-            width: 220px; height: 220px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-        }
+        .hero-inner { max-width: 700px; }
         .hero-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.18);
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 24px;
-            padding: 6px 18px;
-            font-size: 0.82rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            line-height: 1.15;
-            position: relative;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.88;
-            margin-bottom: 36px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-        }
-        .btn-call {
-            display: inline-block;
-            background: white;
-            color: var(--color-dark);
+            background: #f97316;
+            color: white;
+            border-radius: 4px;
+            padding: 4px 12px;
+            font-size: 0.78rem;
             font-weight: 700;
-            font-size: 1.05rem;
-            padding: 15px 38px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
         }
-        .btn-call:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
-        .hero-info {
-            margin-top: 28px;
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 span { color: #f97316; }
+        .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.82); margin-bottom: 28px; line-height: 1.6; max-width: 540px; }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+        .btn-cta {
+            background: #f97316;
+            color: white;
+            font-weight: 800;
+            padding: 15px 32px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .btn-cta:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn-call {
+            background: transparent;
+            color: white;
+            font-weight: 700;
+            padding: 15px 28px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.4);
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: border-color 0.2s;
+        }
+        .btn-call:hover { border-color: white; }
+        .hero-perks { display: flex; gap: 24px; flex-wrap: wrap; }
+        .perk { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+        .perk-icon { font-size: 1rem; }
+
+        /* STATS */
+        .stats-bar {
+            background: #f97316;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 0;
             flex-wrap: wrap;
-            font-size: 0.88rem;
-            opacity: 0.82;
-            position: relative;
         }
-        .hero-info span { display: flex; align-items: center; gap: 6px; }
-
-        /* wave divider */
-        .wave {
-            display: block;
-            width: 100%;
-            height: 48px;
-            background: linear-gradient(145deg, var(--color) 0%, var(--color-dark) 100%);
-            clip-path: ellipse(55% 100% at 50% 0%);
-            margin-bottom: -1px;
-        }
-
-        /* ── Services ── */
-        .services { padding: 60px 0 56px; background: #f9fafb; }
-        .section-title {
+        .stat {
             text-align: center;
-            font-size: 1.75rem;
-            font-weight: 800;
-            margin-bottom: 10px;
+            padding: 20px 40px;
+            color: white;
+            border-right: 1px solid rgba(255,255,255,0.2);
         }
-        .section-sub {
-            text-align: center;
-            color: #6b7280;
-            font-size: 0.95rem;
-            margin-bottom: 36px;
-        }
+        .stat:last-child { border-right: none; }
+        .stat-num { font-size: 1.6rem; font-weight: 800; }
+        .stat-label { font-size: 0.75rem; opacity: 0.85; margin-top: 2px; }
+
+        /* SECTION */
+        section { padding: 64px 24px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .section-title { font-size: 1.75rem; font-weight: 800; margin-bottom: 6px; }
+        .section-title span { color: #f97316; }
+        .section-sub { color: #6b7280; margin-bottom: 36px; }
+
+        /* SERVICES */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 16px;
         }
         .service-card {
-            background: white;
-            border-radius: 18px;
-            padding: 26px 18px;
-            text-align: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border-top: 3px solid var(--color);
-        }
-        .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-        .service-icon { font-size: 2.2rem; margin-bottom: 12px; }
-        .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-        .service-card p { font-size: 0.85rem; color: #6b7280; }
-
-        /* ── Photos ── */
-        .photos { padding: 56px 0; background: white; }
-        .photos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-            margin-top: 36px;
-        }
-        .photos-grid img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 14px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
-        }
-        .photos-grid img:hover { transform: scale(1.02); }
-
-        /* ── Reviews ── */
-        .reviews { padding: 56px 0; background: #f9fafb; }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-            margin-top: 36px;
-        }
-        .review-card {
-            background: white;
-            border-radius: 16px;
-            padding: 22px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-        }
-        .review-stars { color: #f59e0b; font-size: 1rem; margin-bottom: 10px; }
-        .review-text { font-size: 0.9rem; color: #374151; margin-bottom: 14px; line-height: 1.55; }
-        .review-author { font-size: 0.82rem; color: #9ca3af; font-weight: 600; }
-
-        /* ── About ── */
-        .about { padding: 56px 0; }
-        .about .section-title { text-align: left; margin-bottom: 20px; }
-        .about p { color: #374151; font-size: 0.975rem; margin-bottom: 14px; }
-        .about-location {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 10px;
-            background: var(--color-light);
+            background: #f9fafb;
             border-radius: 12px;
-            padding: 10px 18px;
-            font-size: 0.9rem;
-            color: var(--color-dark);
-            font-weight: 600;
+            padding: 24px 20px;
+            border-left: 4px solid #f97316;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+        .service-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .service-icon { font-size: 2rem; margin-bottom: 10px; }
+        .service-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+        .service-card p { font-size: 0.82rem; color: #6b7280; }
 
-        /* ── Contact ── */
-        .contact {
-            padding: 60px 0;
-            background: linear-gradient(145deg, var(--color) 0%, var(--color-dark) 100%);
-            color: white;
-            text-align: center;
-        }
-        .contact .section-title { color: white; margin-bottom: 8px; }
-        .contact-sub { opacity: 0.85; margin-bottom: 36px; font-size: 0.95rem; }
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 14px;
-            margin-bottom: 36px;
-        }
-        .contact-card {
-            background: rgba(255,255,255,0.14);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 16px;
-            padding: 20px 16px;
-            backdrop-filter: blur(6px);
-        }
-        .contact-card h3 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.65; margin-bottom: 8px; }
-        .contact-card a { color: white; text-decoration: none; font-weight: 700; font-size: 1rem; display: block; margin-bottom: 2px; }
-        .contact-card p { font-size: 0.9rem; }
-        .btn-call-white {
-            display: inline-block;
+        /* PRICES */
+        .prices { background: #f9fafb; }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
             background: white;
-            color: var(--color-dark);
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 15px 42px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            transition: transform 0.2s;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            font-size: 0.9rem;
         }
-        .btn-call-white:hover { transform: translateY(-2px); }
+        .price-table th {
+            background: #111;
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .price-table th:last-child { color: #f97316; }
+        .price-table td { padding: 13px 16px; border-bottom: 1px solid #f3f4f6; }
+        .price-table tr:last-child td { border-bottom: none; }
+        .price-table tr:hover td { background: #fff7ed; }
+        .price-table td:last-child { font-weight: 700; color: #f97316; }
+        .price-note { font-size: 0.8rem; color: #9ca3af; margin-top: 12px; }
 
-        /* ── Footer ── */
-        footer {
-            background: #111827;
-            color: #9ca3af;
+        /* WHY */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .why-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
             text-align: center;
-            padding: 22px 20px;
-            font-size: 0.82rem;
         }
-        footer strong { color: white; }
-        footer .socials { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-        footer .socials a { color: #d1d5db; text-decoration: none; }
-        footer .socials a:hover { color: white; }
+        .why-icon { font-size: 2rem; margin-bottom: 10px; }
+        .why-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+        .why-card p { font-size: 0.83rem; color: #6b7280; line-height: 1.5; }
 
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 1.85rem; }
-            .hero-info { gap: 10px; font-size: 0.82rem; }
-            .section-title { font-size: 1.5rem; }
+        /* BOOKING FORM */
+        .booking { background: #111; color: white; }
+        .booking .section-title { color: white; }
+        .booking .section-sub { color: rgba(255,255,255,0.5); }
+        .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+        .booking-info { display: flex; flex-direction: column; gap: 20px; }
+        .info-item { display: flex; gap: 14px; }
+        .info-icon { font-size: 1.4rem; flex-shrink: 0; }
+        .info-item h4 { font-size: 0.78rem; text-transform: uppercase; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; margin-bottom: 4px; }
+        .info-item p { color: white; font-weight: 600; font-size: 0.95rem; }
+        .info-item a { color: #f97316; text-decoration: none; font-weight: 700; }
+
+        .form-card { background: white; color: #1a1a1a; border-radius: 16px; padding: 32px; }
+        .form-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 20px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px; color: #374151; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 11px 14px;
+            border: 2px solid #e5e7eb; border-radius: 8px;
+            font-size: 0.9rem; font-family: inherit; color: #1a1a1a;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #f97316; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .btn-submit {
+            width: 100%; background: #f97316; color: white;
+            border: none; border-radius: 8px; padding: 14px;
+            font-weight: 800; font-size: 0.95rem; cursor: pointer;
+            transition: opacity 0.2s; margin-top: 4px;
+        }
+        .btn-submit:hover { opacity: 0.9; }
+        .form-note { font-size: 0.75rem; color: #9ca3af; text-align: center; margin-top: 8px; }
+        .success-msg { display: none; text-align: center; padding: 24px; }
+        .success-msg .icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .success-msg h3 { font-weight: 700; margin-bottom: 6px; }
+        .success-msg p { color: #6b7280; font-size: 0.88rem; }
+
+        .map-block {
+            background: #f3f4f6;
+            border-radius: 12px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-align: center;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        footer {
+            background: #0a0a0a;
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            padding: 20px 24px;
+            font-size: 0.8rem;
+        }
+        footer a { color: rgba(255,255,255,0.4); }
+
+        @media (max-width: 640px) {
+            .booking-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .stat { padding: 16px 20px; }
+            .hero { padding: 56px 20px; }
         }
     </style>
 </head>
 <body>
 
+<nav>
+    <div class="nav-logo">Авто-<span>лидер</span></div>
+    <a href="tel:+79014500091" class="nav-phone">+7 (901) 450-00-91</a>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
-    <div class="container">
-        <div class="hero-badge">шиномонтажная мастерская</div>
-        <h1>Авто-лидер</h1>
-        <p>Авто-лидер — шиномонтажная мастерская в Новосибирск. Опытные специалисты, доступные цены, удобное расположение.</p>
-        <a href="tel:+79014500091" class="btn-call">📞 +7 (901) 450-00-91</a>
-        <div class="hero-info">
-            <span>📍 Троллейная улица, 2 к2</span>
-            <span>🕐 Уточняйте по телефону</span>
+    <div class="hero-inner">
+        <div class="hero-badge">⚡ Шиномонтаж 24/7 · Дошиповка · Правка дисков</div>
+        <h1>Шиномонтаж <span>24/7</span><br>в Новосибирске</h1>
+        <p>Работаем круглосуточно без выходных. Балансировка, правка дисков, дошиповка, хранение шин и заправка кондиционеров.</p>
+        <div class="hero-btns">
+            <a href="#booking" class="btn-cta">Записаться онлайн</a>
+            <a href="tel:+79014500091" class="btn-call">📞 Позвонить</a>
+        </div>
+        <div class="hero-perks">
+            <div class="perk"><span class="perk-icon">✅</span> Работаем 24/7</div>
+            <div class="perk"><span class="perk-icon">✅</span> Без очередей</div>
+            <div class="perk"><span class="perk-icon">✅</span> Гарантия</div>
+            <div class="perk"><span class="perk-icon">✅</span> Оплата картой</div>
         </div>
     </div>
 </section>
 
-<section class="services">
+<div class="stats-bar">
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">без выходных</div></div>
+    <div class="stat"><div class="stat-num">4.6 ★</div><div class="stat-label">рейтинг 2ГИС</div></div>
+    <div class="stat"><div class="stat-num">102</div><div class="stat-label">отзыва</div></div>
+    <div class="stat"><div class="stat-num">30 мин</div><div class="stat-label">среднее время</div></div>
+</div>
+
+<!-- SERVICES -->
+<section>
     <div class="container">
-        <h2 class="section-title fade-up">Наши услуги</h2>
-        <p class="section-sub fade-up">Всё, что вам нужно — в одном месте</p>
+        <h2 class="section-title">Наши <span>услуги</span></h2>
+        <p class="section-sub">Всё для ваших колёс в одном месте</p>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🔄</div>
                 <h3>Шиномонтаж</h3>
-                <p>Быстрая замена и балансировка колёс</p>
+                <p>Ремонт всех видов шин на литых и стальных дисках</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>Балансировка</h3>
+                <p>Компьютерная балансировка колёс для плавного хода</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔨</div>
+                <h3>Правка дисков</h3>
+                <p>Восстановление геометрии литых и стальных дисков</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧲</div>
+                <h3>Дошиповка</h3>
+                <p>Установка шипов в зимние шины, восстановление шиповки</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">📦</div>
                 <h3>Хранение шин</h3>
-                <p>Сезонное хранение на складе</p>
+                <p>Сезонное хранение комплекта шин в отапливаемом помещении</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🛞</div>
-                <h3>Продажа шин</h3>
-                <p>Широкий выбор летней и зимней резины</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔩</div>
-                <h3>Ремонт дисков</h3>
-                <p>Правка, сварка, покраска дисков</p>
+                <div class="service-icon">❄️</div>
+                <h3>Заправка кондиционеров</h3>
+                <p>Заправка автомобильных кондиционеров с проверкой системы</p>
             </div>
         </div>
     </div>
 </section>
 
-
-
-
-
-<section class="about">
+<!-- PRICES -->
+<section class="prices" id="prices">
     <div class="container">
-        <h2 class="section-title fade-up">О нас</h2>
-        <p class="fade-up">Авто-лидер — шиномонтажная мастерская в Новосибирск. Опытные специалисты, доступные цены, удобное расположение.</p>
-        <p class="fade-up">Приходите — убедитесь сами!</p>
-        <div class="about-location fade-up">
-            📍 Новосибирск, Троллейная улица, 2 к2
+        <h2 class="section-title">Цены на <span>шиномонтаж</span></h2>
+        <p class="section-sub">Стоимость за одно колесо, включая балансировку</p>
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Размер</th>
+                    <th>Снятие/установка</th>
+                    <th>Монтаж/демонтаж</th>
+                    <th>Балансировка</th>
+                    <th>Итого</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>R13 – R14</td><td>100 ₽</td><td>200 ₽</td><td>150 ₽</td><td>450 ₽</td></tr>
+                <tr><td>R15</td><td>100 ₽</td><td>220 ₽</td><td>160 ₽</td><td>480 ₽</td></tr>
+                <tr><td>R16</td><td>100 ₽</td><td>250 ₽</td><td>170 ₽</td><td>520 ₽</td></tr>
+                <tr><td>R17</td><td>100 ₽</td><td>280 ₽</td><td>190 ₽</td><td>570 ₽</td></tr>
+                <tr><td>R18</td><td>100 ₽</td><td>320 ₽</td><td>200 ₽</td><td>620 ₽</td></tr>
+                <tr><td>R19 – R20</td><td>100 ₽</td><td>380 ₽</td><td>220 ₽</td><td>700 ₽</td></tr>
+                <tr><td>Ремонт прокола</td><td colspan="3">Жгут / грибок</td><td>350 ₽</td></tr>
+                <tr><td>Хранение шин</td><td colspan="3">Сезон (4 шины)</td><td>от 1 500 ₽</td></tr>
+            </tbody>
+        </table>
+        <p class="price-note">* Цены указаны за 1 колесо. Скидка 10% при заказе полного комплекта (4 колеса).</p>
+    </div>
+</section>
+
+<!-- WHY -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Почему выбирают <span>нас</span></h2>
+        <p class="section-sub"></p>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🌙</div>
+                <h3>Работаем 24/7</h3>
+                <p>Прокол ночью или в выходной — приедем или примем в любое время</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🔧</div>
+                <h3>Опытные мастера</h3>
+                <p>Умеем работать с любыми видами дисков и шин, включая низкопрофильные</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🛡</div>
+                <h3>Гарантия</h3>
+                <p>Гарантируем качество монтажа и балансировки. Переделаем бесплатно</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💳</div>
+                <h3>Любой способ оплаты</h3>
+                <p>Наличные, карта, перевод по СБП — как вам удобно</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="contact">
+<!-- BOOKING -->
+<section class="booking" id="booking">
     <div class="container">
-        <h2 class="section-title">Свяжитесь с нами</h2>
-        <p class="contact-sub">Позвоните — ответим на все вопросы и запишем вас</p>
-        <div class="contact-cards">
-            <div class="contact-card">
-                <h3>Телефон</h3>
-                <a href="tel:+79014500091">+7 (901) 450-00-91</a>
+        <h2 class="section-title">Записаться<span style="color:#f97316"> онлайн</span></h2>
+        <p class="section-sub">Оставьте заявку — перезвоним и подтвердим время</p>
+        <div class="booking-grid">
+            <div class="booking-info">
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <h4>Адрес</h4>
+                        <p>Новосибирск, Троллейная ул., 2 к2</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <h4>Телефон</h4>
+                        <a href="tel:+79014500091">+7 (901) 450-00-91</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💬</div>
+                    <div>
+                        <h4>Telegram</h4>
+                        <a href="https://t.me/+79014500091">Написать в Telegram</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🕐</div>
+                    <div>
+                        <h4>Время работы</h4>
+                        <p>Круглосуточно, 24/7</p>
+                    </div>
+                </div>
+                <div class="map-block">
+                    📍 Троллейная ул., 2 к2<br><br>
+                    <small>Яндекс.Карты или Google Maps будут здесь</small>
+                </div>
             </div>
-            <div class="contact-card">
-                <h3>Адрес</h3>
-                <p>Новосибирск</p>
-                <p>Троллейная улица, 2 к2</p>
-            </div>
-            <div class="contact-card">
-                <h3>Режим работы</h3>
-                <p>Уточняйте по телефону</p>
+            <div class="form-card">
+                <h3>Оставить заявку</h3>
+                <form id="bookingForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label>Услуга</label>
+                        <select name="service" required>
+                            <option value="">— Выберите —</option>
+                            <option>Шиномонтаж + балансировка</option>
+                            <option>Только балансировка</option>
+                            <option>Ремонт прокола</option>
+                            <option>Правка дисков</option>
+                            <option>Дошиповка</option>
+                            <option>Сезонная замена</option>
+                            <option>Хранение шин</option>
+                            <option>Заправка кондиционера</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Размер шин</label>
+                        <select name="size">
+                            <option value="">— Выберите —</option>
+                            <option>R13–R14</option>
+                            <option>R15</option>
+                            <option>R16</option>
+                            <option>R17</option>
+                            <option>R18</option>
+                            <option>R19–R20</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Удобная дата</label>
+                            <input type="date" name="date" id="dateInput">
+                        </div>
+                        <div class="form-group">
+                            <label>Время</label>
+                            <select name="time">
+                                <option>08:00 – 10:00</option>
+                                <option>10:00 – 12:00</option>
+                                <option>12:00 – 14:00</option>
+                                <option>14:00 – 17:00</option>
+                                <option>17:00 – 21:00</option>
+                                <option>21:00 – 00:00</option>
+                                <option>Ночь (00:00 – 08:00)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Имя</label>
+                            <input type="text" name="name" placeholder="Александр" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Телефон</label>
+                            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Записаться →</button>
+                    <p class="form-note">Подтвердим запись по телефону в течение 15 минут</p>
+                </form>
+                <div class="success-msg" id="successMsg">
+                    <div class="icon">✅</div>
+                    <h3>Заявка принята!</h3>
+                    <p>Перезвоним в течение 15 минут и подтвердим время.</p>
+                </div>
             </div>
         </div>
-        <a href="tel:+79014500091" class="btn-call-white">Позвонить сейчас</a>
     </div>
 </section>
 
 <footer>
-    <strong>Авто-лидер</strong> · Новосибирск, Троллейная улица, 2 к2
-    <ul class="socials">
-        <li><a href="https://t.me/+79133937533" target="_blank" rel="noopener">📱 Написать нам</a></li>
-    </ul>
-    <div style="margin-top:10px;font-size:0.75rem;color:#6b7280;">Сайт сделан в <a href="https://sitebystro.ru" target="_blank" rel="dofollow" style="color:#6b7280;">СайтБыстро</a></div>
+    Сайт сделан в <a href="https://sitebystro.ru" target="_blank">СайтБыстро</a>
 </footer>
 
 <script>
-    const io = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+document.getElementById('dateInput').min = new Date().toISOString().split('T')[0];
 
-    document.querySelectorAll('.service-card').forEach((el, i) => {
-        el.classList.add('fade-up');
-        el.style.transitionDelay = (i * 0.07) + 's';
-        io.observe(el);
-    });
-    document.querySelectorAll('.review-card, .photos-grid img').forEach((el, i) => {
-        el.classList.add('fade-up');
-        el.style.transitionDelay = (i * 0.08) + 's';
-        io.observe(el);
-    });
+function submitForm(e) {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const text = `🔧 Заявка — Авто-лидер!\n\nУслуга: ${data.get('service')}\nРазмер: ${data.get('size')}\nДата: ${data.get('date')}, ${data.get('time')}\nИмя: ${data.get('name')}\nТелефон: ${data.get('phone')}`;
+
+    fetch('https://api.telegram.org/bot8652185579:AAHf6FoeRsbV_hyfs0-mdnwdv-qIhWA6JWk/sendMessage', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ chat_id: '579387502', text })
+    }).catch(() => {});
+
+    e.target.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+}
 </script>
 </body>
 </html>
