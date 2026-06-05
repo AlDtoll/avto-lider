@@ -22,8 +22,8 @@
             z-index: 100;
         }
         .nav-logo { color: white; font-weight: 800; font-size: 1.1rem; }
-        .nav-logo span { color: #f97316; }
-        .nav-phone { color: #f97316; font-weight: 700; text-decoration: none; font-size: 1rem; }
+        .nav-logo span { color: #f5c800; }
+        .nav-phone { color: #f5c800; font-weight: 700; text-decoration: none; font-size: 1rem; }
         .nav-phone:hover { color: white; }
 
         /* HERO */
@@ -38,8 +38,8 @@
         .hero-inner { max-width: 700px; }
         .hero-badge {
             display: inline-block;
-            background: #f97316;
-            color: white;
+            background: #f5c800;
+            color: #111;
             border-radius: 4px;
             padding: 4px 12px;
             font-size: 0.78rem;
@@ -49,12 +49,12 @@
             margin-bottom: 18px;
         }
         .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
-        .hero h1 span { color: #f97316; }
+        .hero h1 span { color: #f5c800; }
         .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.82); margin-bottom: 28px; line-height: 1.6; max-width: 540px; }
         .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
         .btn-cta {
-            background: #f97316;
-            color: white;
+            background: #f5c800;
+            color: #111;
             font-weight: 800;
             padding: 15px 32px;
             border-radius: 8px;
@@ -85,7 +85,8 @@
 
         /* STATS */
         .stats-bar {
-            background: #f97316;
+            background: #f5c800;
+            color: #111;
             display: flex;
             justify-content: center;
             gap: 0;
@@ -94,18 +95,18 @@
         .stat {
             text-align: center;
             padding: 20px 40px;
-            color: white;
-            border-right: 1px solid rgba(255,255,255,0.2);
+            color: #111;
+            border-right: 1px solid rgba(0,0,0,0.15);
         }
         .stat:last-child { border-right: none; }
         .stat-num { font-size: 1.6rem; font-weight: 800; }
-        .stat-label { font-size: 0.75rem; opacity: 0.85; margin-top: 2px; }
+        .stat-label { font-size: 0.75rem; opacity: 0.7; margin-top: 2px; }
 
         /* SECTION */
         section { padding: 64px 24px; }
         .container { max-width: 1000px; margin: 0 auto; }
         .section-title { font-size: 1.75rem; font-weight: 800; margin-bottom: 6px; }
-        .section-title span { color: #f97316; }
+        .section-title span { color: #f5c800; }
         .section-sub { color: #6b7280; margin-bottom: 36px; }
 
         /* SERVICES */
@@ -118,7 +119,7 @@
             background: #f9fafb;
             border-radius: 12px;
             padding: 24px 20px;
-            border-left: 4px solid #f97316;
+            border-left: 4px solid #f5c800;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .service-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
@@ -146,11 +147,11 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        .price-table th:last-child { color: #f97316; }
+        .price-table th:last-child { color: #f5c800; }
         .price-table td { padding: 13px 16px; border-bottom: 1px solid #f3f4f6; }
         .price-table tr:last-child td { border-bottom: none; }
         .price-table tr:hover td { background: #fff7ed; }
-        .price-table td:last-child { font-weight: 700; color: #f97316; }
+        .price-table td:last-child { font-weight: 700; color: #b8960a; }
         .price-note { font-size: 0.8rem; color: #9ca3af; margin-top: 12px; }
 
         /* WHY */
@@ -180,7 +181,7 @@
         .info-icon { font-size: 1.4rem; flex-shrink: 0; }
         .info-item h4 { font-size: 0.78rem; text-transform: uppercase; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; margin-bottom: 4px; }
         .info-item p { color: white; font-weight: 600; font-size: 0.95rem; }
-        .info-item a { color: #f97316; text-decoration: none; font-weight: 700; }
+        .info-item a { color: #f5c800; text-decoration: none; font-weight: 700; }
 
         .form-card { background: white; color: #1a1a1a; border-radius: 16px; padding: 32px; }
         .form-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 20px; }
@@ -192,10 +193,10 @@
             font-size: 0.9rem; font-family: inherit; color: #1a1a1a;
             transition: border-color 0.2s;
         }
-        .form-group input:focus, .form-group select:focus { outline: none; border-color: #f97316; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #f5c800; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .btn-submit {
-            width: 100%; background: #f97316; color: white;
+            width: 100%; background: #f5c800; color: #111;
             border: none; border-radius: 8px; padding: 14px;
             font-weight: 800; font-size: 0.95rem; cursor: pointer;
             transition: opacity 0.2s; margin-top: 4px;
@@ -374,7 +375,7 @@
 <!-- BOOKING -->
 <section class="booking" id="booking">
     <div class="container">
-        <h2 class="section-title">Записаться<span style="color:#f97316"> онлайн</span></h2>
+        <h2 class="section-title">Записаться<span style="color:#f5c800"> онлайн</span></h2>
         <p class="section-sub">Оставьте заявку — перезвоним и подтвердим время</p>
         <div class="booking-grid">
             <div class="booking-info">
